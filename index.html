@@ -134,7 +134,7 @@
                 </ul>
             </div>
 
-            <div class="bg-dl_card border border-dl_border p-8 relative overflow-hidden group hover:border-dl_peach/50 transition-colors flex flex-col justify-center">
+            <div class="bg-dl_card border border-dl_border p-8 relative overflow-hidden group hover:border-dl_peach/50 transition-colors flex flex-col justify-center min-w-0">
                 <div class="absolute top-0 right-0 w-1 h-full bg-dl_peach/50 group-hover:bg-dl_peach transition-colors z-10"></div>
                 
                 <div class="relative z-10">
@@ -142,6 +142,21 @@
                     <p class="text-sm text-dl_text/80 mb-6 leading-relaxed">
                         برای نصب به <strong class="text-dl_text">Python 3 و Git</strong> نیاز دارید؛ در لینوکس <strong class="text-dl_text">curl</strong> و در ویندوز راه‌انداز <strong class="text-dl_text">py</strong> نیز لازم است. پیش از نصب یا به‌روزرسانی، بازی را کاملاً ببندید.
                     </p>
+                    <div class="space-y-5 mb-6 min-w-0">
+                        <div>
+                            <h3 class="text-sm font-bold mb-2">Windows · PowerShell</h3>
+                            <div class="code-block bg-[#111] p-3 text-xs text-dl_text/80 overflow-x-auto whitespace-pre"><code id="windows-prerequisites">winget install --exact --id Git.Git --source winget; if ($LASTEXITCODE -ne 0 -and $LASTEXITCODE -ne -1978335189) { throw &#x27;Git installation failed&#x27; }; winget install --exact --id Python.Python.3.13 --source winget; if ($LASTEXITCODE -ne 0 -and $LASTEXITCODE -ne -1978335189) { throw &#x27;Python installation failed&#x27; }</code></div>
+                            <button type="button" class="copy-command mt-2 text-xs text-dl_peach hover:underline" data-target="windows-prerequisites">کپی دستور ویندوز</button>
+                            <p class="text-xs text-dl_text/60 mt-2">به winget (App Installer) نیاز دارد. درخواست‌های نصب را تأیید کنید و پس از پایان، PowerShell را ببندید و دوباره باز کنید. با <span dir="ltr">git --version</span> و <span dir="ltr">py -3 --version</span> نصب را بررسی کنید؛ در صورت نبود py، Python Launcher را از نصب‌کنندهٔ رسمی Python اضافه کنید.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold mb-2">Linux · Bash</h3>
+                            <div class="code-block bg-[#111] p-3 text-xs text-dl_text/80 overflow-x-auto whitespace-pre"><code id="linux-prerequisites">set -o pipefail; (if command -v curl &gt;/dev/null 2&gt;&amp;1; then curl -fsSL https://raw.githubusercontent.com/deadlockpersian/deadlock-persian/main/scripts/install-prerequisites.sh; elif command -v wget &gt;/dev/null 2&gt;&amp;1; then wget -qO- https://raw.githubusercontent.com/deadlockpersian/deadlock-persian/main/scripts/install-prerequisites.sh; else echo &#x27;Install curl or wget first.&#x27; &gt;&amp;2; exit 1; fi) | bash</code></div>
+                            <button type="button" class="copy-command mt-2 text-xs text-dl_peach hover:underline" data-target="linux-prerequisites">کپی دستور لینوکس</button>
+                            <p class="text-xs text-dl_text/60 mt-2">پشتیبانی از Ubuntu/Debian، Fedora/RHEL، Arch، openSUSE و Alpine با مدیر بستهٔ سیستم؛ ممکن است رمز sudo بخواهد. برای دریافت ابزار، Bash و یکی از curl یا wget باید موجود باشد. در Arch به‌روزرسانی کامل سیستم نیز انجام می‌شود. پیش از اجرا، اسکریپت را بررسی کنید.</p>
+                            <p class="text-xs text-dl_peach mt-2">این دستور پس از انتشار فایل scripts/install-prerequisites.sh در شاخهٔ main پروژهٔ اصلی قابل استفاده است.</p>
+                        </div>
+                    </div>
                     <a href="https://github.com/deadlockpersian/deadlock-persian" target="_blank" class="inline-block bg-dl_bg/50 backdrop-blur-sm border border-dl_peach text-dl_peach hover:bg-dl_peach hover:text-dl_bg font-bold px-6 py-2.5 rounded-sm transition-all text-center text-sm">
                         دریافت سورس کد
                     </a>
