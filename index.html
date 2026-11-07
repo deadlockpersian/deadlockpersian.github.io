@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deadlock Persian | فارسی‌ساز بازی Deadlock</title>
-    <link rel="icon" type="image/png" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@
         .hero-bg {
             background-image: 
                 linear-gradient(to bottom, rgba(22, 22, 22, 0.8) 0%, rgba(22, 22, 22, 0.3) 40%, rgba(22, 22, 22, 0.9) 85%, #161616 100%),
-                url('header_city.webp');
+                url('assets/header_city.webp');
             background-size: cover;
             background-position: center top;
             background-repeat: no-repeat;
@@ -103,7 +103,7 @@
         <div class="max-w-3xl mx-auto relative z-10 mt-10">
             
             <div class="mb-8 flex justify-center drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
-                <img src="logo.svg" alt="Deadlock Logo" class="w-full max-w-md md:max-w-xl object-contain" style="filter: brightness(0) invert(1); mix-blend-mode: screen;">
+                <img src="assets/logo.svg" alt="Deadlock Logo" class="w-full max-w-md md:max-w-xl object-contain" style="filter: brightness(0) invert(1); mix-blend-mode: screen;">
             </div>
 
             <h1 class="text-3xl md:text-5xl font-black leading-tight mb-6 tracking-tight text-dl_text drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
@@ -167,21 +167,21 @@
                             <span class="detect-badge hidden absolute top-0 left-0 bg-dl_olive text-dl_bg text-xs font-bold px-3 py-1">OS DETECTED</span>
                             <h3 class="text-lg font-bold text-dl_text mb-2 flex items-center gap-2">Linux <span class="text-dl_olive text-xl">🐧</span></h3>
                             <p class="text-xs text-dl_text/50 mb-4">Bash · Git · Python 3 · curl</p>
-                            <div class="code-block bg-[#111] p-4 text-xs text-dl_text/80 overflow-x-auto whitespace-pre"><code id="linux-command">set -o pipefail; curl -fsSL https://raw.githubusercontent.com/deadlockpersian/deadlock-persian/arena/435414a8-deadlock-persian/scripts/bootstrap.sh | bash -s -- install</code></div>
+                            <div class="code-block bg-[#111] p-4 text-xs text-dl_text/80 overflow-x-auto whitespace-pre"><code id="linux-command">set -o pipefail; curl -fsSL https://raw.githubusercontent.com/deadlockpersian/deadlock-persian/main/scripts/bootstrap.sh | bash -s -- install</code></div>
                             <button type="button" class="copy-command mt-4 border border-dl_olive/60 text-dl_olive hover:bg-dl_olive hover:text-dl_bg px-4 py-2 text-sm font-bold transition-colors" data-target="linux-command">کپی دستور</button>
                         </div>
                         <div id="os-windows" class="bg-dl_bg/90 backdrop-blur-sm border border-dl_border p-6 transition-all duration-500 relative">
                             <span class="detect-badge hidden absolute top-0 left-0 bg-dl_peach text-dl_bg text-xs font-bold px-3 py-1">OS DETECTED</span>
                             <h3 class="text-lg font-bold text-dl_text mb-2 flex items-center gap-2">Windows <span class="text-dl_peach text-xl">🪟</span></h3>
                             <p class="text-xs text-dl_text/50 mb-4">PowerShell · Git for Windows · Python 3 (py)</p>
-                            <div class="code-block bg-[#111] p-4 text-xs text-dl_text/80 overflow-x-auto whitespace-pre"><code id="windows-command">&amp; ([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/deadlockpersian/deadlock-persian/arena/435414a8-deadlock-persian/scripts/bootstrap.ps1').Content)) -Action install</code></div>
+                            <div class="code-block bg-[#111] p-4 text-xs text-dl_text/80 overflow-x-auto whitespace-pre"><code id="windows-command">&amp; ([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/deadlockpersian/deadlock-persian/main/scripts/bootstrap.ps1').Content)) -Action install</code></div>
                             <button type="button" class="copy-command mt-4 border border-dl_peach/60 text-dl_peach hover:bg-dl_peach hover:text-dl_bg px-4 py-2 text-sm font-bold transition-colors" data-target="windows-command">کپی دستور</button>
                         </div>
                     </div>
                     <p id="copy-status" class="text-center text-xs text-dl_text/60 mt-4 min-h-[1.25rem]" role="status" aria-live="polite"></p>
                     <p class="text-center text-xs text-dl_text/50 mt-2 leading-relaxed">دکمهٔ به‌روزرسانی دستور جدید را نمایش می‌دهد؛ برای اعمال آن، دستور را در ترمینال اجرا کنید. اسکریپت از فایل‌های اصلی پشتیبان می‌گیرد و اگر فایل‌های نصب‌شده تغییر کرده باشند، به‌روزرسانی را متوقف می‌کند.</p>
                     <p class="text-center text-xs text-dl_text/50 mt-2 leading-relaxed">اگر بازی پیدا نشد، در لینوکس مسیر پوشهٔ citadel را در انتهای دستور داخل کوتیشن اضافه کنید؛ در ویندوز <span dir="ltr">-GameDir "C:\path\to\Deadlock\game\citadel"</span> را به انتهای دستور PowerShell اضافه کنید. جزئیات حذف و بازگردانی در README است.</p>
-                    <p class="text-center text-xs text-dl_text/50 mt-2 leading-relaxed">این دستورها از شاخهٔ فعلی پروژه دریافت می‌شوند و پس از انتشار فایل‌های جدید روی آن شاخه قابل استفاده‌اند؛ حذف شاخه نیز پیوندها را از کار می‌اندازد.</p>
+                    <p class="text-center text-xs text-dl_text/50 mt-2 leading-relaxed">این دستورها اسکریپت‌های شاخهٔ main مخزن اصلی را دریافت می‌کنند. پیش از اجرا، محتوای اسکریپت را بررسی کنید. اسکریپت‌های فعلی هنوز به مخزن قدیمی و شاخهٔ arena ارجاع داخلی دارند؛ تا اصلاح آن‌ها در پروژهٔ اصلی، ممکن است نصب یا به‌روزرسانی با خطا مواجه شود.</p>
 
                 </div>
             </div>
@@ -191,40 +191,23 @@
                     <h2 class="text-xl font-bold text-dl_text">تصاویر محیط بازی</h2>
                     <img src="https://cdn.fastly.steamstatic.com/apps/deadlock/images/react/cityneversleeps/mustdo_snack.webp" alt="" aria-hidden="true" class="game-ornament gallery-snack" loading="lazy" decoding="async">
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
-                    <div class="screenshot-thumb border border-dl_border group relative aspect-video overflow-hidden cursor-pointer hover:border-dl_peach transition-colors" data-index="0">
-                        <img src="https://raw.githubusercontent.com/deadlockpersian/deadlock-persian/arena/435414a8-deadlock-persian/Screenshots/1_hero_switch.png" alt="Screenshot 1" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" loading="lazy">
-                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-dl_text drop-shadow-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg>
-                        </div>
-                    </div>
-                    <div class="screenshot-thumb border border-dl_border group relative aspect-video overflow-hidden cursor-pointer hover:border-dl_peach transition-colors" data-index="1">
-                        <img src="https://raw.githubusercontent.com/deadlockpersian/deadlock-persian/arena/435414a8-deadlock-persian/Screenshots/2_esc.png" alt="Screenshot 2" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" loading="lazy">
-                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-dl_text drop-shadow-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg>
-                        </div>
-                    </div>
-                    <div class="screenshot-thumb border border-dl_border group relative aspect-video overflow-hidden cursor-pointer hover:border-dl_peach transition-colors" data-index="2">
-                        <img src="https://raw.githubusercontent.com/deadlockpersian/deadlock-persian/arena/435414a8-deadlock-persian/Screenshots/3_setting.png" alt="Screenshot 3" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" loading="lazy">
-                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-dl_text drop-shadow-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg>
-                        </div>
-                    </div>
-                </div>
+                <div id="screenshot-gallery" class="grid grid-cols-1 md:grid-cols-3 gap-2" aria-label="اسکرین‌شات‌های بازی"></div>
+                <p id="gallery-status" class="text-sm text-dl_text/60 mt-4" role="status">در حال بارگذاری تصاویر…</p>
+                <noscript><p>برای نمایش گالری، جاوااسکریپت مرورگر را فعال کنید.</p></noscript>
             </div>
 
         </div>
     </main>
 
     <footer class="relative border-t border-dl_border mt-auto overflow-hidden">
-        <div class="absolute inset-0 bg-[url('chinatown_01.jpg')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-[url('assets/chinatown_01.jpg')] bg-cover bg-center"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-dl_bg via-dl_bg/90 to-dl_bg/60"></div>
         
         <div class="relative z-10 max-w-5xl mx-auto px-4 py-12">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                 
                 <div class="md:col-span-1">
-                    <img src="logo.svg" alt="Deadlock Persian" class="h-8 md:h-10 w-auto object-contain mb-4 opacity-80" style="filter: brightness(0) invert(1); mix-blend-mode: screen;">
+                    <img src="assets/logo.svg" alt="Deadlock Persian" class="h-8 md:h-10 w-auto object-contain mb-4 opacity-80" style="filter: brightness(0) invert(1); mix-blend-mode: screen;">
                     <p class="text-sm text-dl_text/70 leading-relaxed text-justify drop-shadow-md">
                         پروژه متن‌باز فارسی‌سازی بازی Deadlock. هدف این پروژه ارائه یک تجربه روان و بومی‌سازی شده برای کاربران فارسی‌زبان است. تمامی حقوق مربوط به بازی اصلی متعلق به Valve است.
                     </p>
@@ -304,7 +287,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const bootstrapBase = 'https://raw.githubusercontent.com/BDadmehr0/deadlock-persian/arena/435414a8-deadlock-persian/scripts/';
+            const bootstrapBase = 'https://raw.githubusercontent.com/deadlockpersian/deadlock-persian/main/scripts/';
             const actionButtons = document.querySelectorAll('.setup-action');
             const linuxCommand = document.getElementById('linux-command');
             const windowsCommand = document.getElementById('windows-command');
@@ -352,15 +335,8 @@
             }
         });
 
-        const fallbackScreenshots = [
-            'https://raw.githubusercontent.com/BDadmehr0/deadlock-persian/arena/435414a8-deadlock-persian/Screenshots/1_hero_switch.png',
-            'https://raw.githubusercontent.com/BDadmehr0/deadlock-persian/arena/435414a8-deadlock-persian/Screenshots/2_esc.png',
-            'https://raw.githubusercontent.com/BDadmehr0/deadlock-persian/arena/435414a8-deadlock-persian/Screenshots/3_setting.png'
-        ];
-
-        let allScreenshots = [];
+        const allScreenshots = [];
         let currentIndex = 0;
-        let fetchPromise = null;
 
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
@@ -368,70 +344,53 @@
         const lightboxLoading = document.getElementById('lightbox-loading');
         const lightboxThumbs = document.getElementById('lightbox-thumbs');
 
-        async function tryFetchContents(ref, path) {
-            const url = `https://api.github.com/repos/BDadmehr0/deadlock-persian/contents/${path}?ref=${encodeURIComponent(ref)}`;
-            const res = await fetch(url, { headers: { 'Accept': 'application/vnd.github+json' } });
-            if (!res.ok) throw new Error(`HTTP ${res.status}`);
-            const data = await res.json();
-            if (!Array.isArray(data)) throw new Error('Not array');
-            return data;
-        }
+        // Static hosting has no directory listing: probe consecutive PNGs until the first missing file.
+        // Add assets/Screenshots/5.png, 6.png, ... without changing this page.
+        async function discoverScreenshots() {
+            const gallery = document.getElementById('screenshot-gallery');
+            const status = document.getElementById('gallery-status');
+            for (let number = 1; ; number++) {
+                const url = `assets/Screenshots/${number}.png`;
+                const image = new Image();
+                const exists = await new Promise(resolve => {
+                    image.onload = () => resolve(true);
+                    image.onerror = () => resolve(false);
+                    image.src = url;
+                });
+                if (!exists) break;
 
-        async function fetchAllScreenshots() {
-            if (allScreenshots.length > 0) return allScreenshots;
-            if (fetchPromise) return fetchPromise;
-
-            fetchPromise = (async () => {
-                const attempts = [
-                    ['arena/435414a8-deadlock-persian', 'Screenshots'],
-                    ['arena', '435414a8-deadlock-persian/Screenshots'],
-                ];
-                for (const [ref, path] of attempts) {
-                    try {
-                        const files = await tryFetchContents(ref, path);
-                        const imgs = files
-                            .filter(f => f.type === 'file' && /\.(png|jpe?g|webp|gif)$/i.test(f.name))
-                            .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }))
-                            .map(f => f.download_url);
-                        if (imgs.length > 0) {
-                            allScreenshots = imgs;
-                            return allScreenshots;
-                        }
-                    } catch (e) {
-                        console.warn('Fetch attempt failed:', ref, path, e);
-                    }
+                const index = allScreenshots.push(url) - 1;
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'screenshot-thumb border border-dl_border group relative aspect-video overflow-hidden cursor-pointer hover:border-dl_peach transition-colors';
+                button.setAttribute('aria-label', `نمایش اسکرین‌شات ${number}`);
+                image.alt = `اسکرین‌شات ${number} از محیط بازی`;
+                image.className = 'w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500';
+                button.append(image);
+                button.addEventListener('click', () => openLightbox(index));
+                gallery.append(button);
+                status.classList.add('hidden');
+                if (!lightbox.classList.contains('hidden')) {
+                    renderThumbs();
+                    lightboxCounter.textContent = `${currentIndex + 1} / ${allScreenshots.length}`;
                 }
-                allScreenshots = fallbackScreenshots.slice();
-                return allScreenshots;
-            })();
-
-            return fetchPromise;
+            }
+            if (!allScreenshots.length) {
+                status.textContent = 'تصویری پیدا نشد؛ لطفاً صفحه را دوباره بارگذاری کنید.';
+            }
         }
 
-        async function openLightbox(startIndex) {
+        function openLightbox(startIndex) {
+            if (!allScreenshots.length) return;
             lightbox.classList.remove('hidden');
             lightbox.classList.add('flex');
             requestAnimationFrame(() => lightbox.classList.remove('opacity-0'));
             document.body.style.overflow = 'hidden';
-
-            lightboxLoading.classList.remove('hidden');
-            lightboxImg.classList.add('hidden');
-            lightboxCounter.textContent = '…';
-            lightboxThumbs.innerHTML = '';
-
-            const clickedUrl = fallbackScreenshots[startIndex] || fallbackScreenshots[0];
-            const list = await fetchAllScreenshots();
-
-            let idx = list.findIndex(url => url === clickedUrl);
-            if (idx < 0) {
-                const clickedName = clickedUrl.split('/').pop().toLowerCase();
-                idx = list.findIndex(url => url.split('/').pop().toLowerCase() === clickedName);
-            }
-            currentIndex = idx >= 0 ? idx : 0;
-
             renderThumbs();
-            showImage(currentIndex);
+            showImage(startIndex);
         }
+
+        discoverScreenshots();
 
         function closeLightbox() {
             lightbox.classList.add('opacity-0');
@@ -487,13 +446,6 @@
                 btn.addEventListener('click', () => showImage(parseInt(btn.dataset.index, 10)));
             });
         }
-
-        document.querySelectorAll('.screenshot-thumb').forEach(el => {
-            el.addEventListener('click', () => {
-                const idx = parseInt(el.dataset.index, 10) || 0;
-                openLightbox(idx);
-            });
-        });
 
         document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
         document.getElementById('lightbox-next').addEventListener('click', () => showImage(currentIndex + 1));
